@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallup - Redesign</title>
+    <style>
+        body {
+            padding: 0%;
+            margin: 0%;
+            font-family: Arial, sans-serif; 
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .en_ustungu_text {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 20px;
+            padding-right: 40px;
+            font-size: 12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-right: 40px;
+        }
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 40px;
+        }
+        .left h1 {
+            margin: 0;
+            padding-right: 10px;
+        }
+        .container1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 40px;
+        }
+        .box1 img, .box2 img, .box3 img {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: cover;
+        }
+        .green p, .green {
+            color: green;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+            text-transform: uppercase;
+        }
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 40px;
+            padding-top: 0;
+            border-bottom: 1px solid #eee;
+        }
+        .box4 img, .box5 img, .box6 img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+        } 
+        .bordertext {
+            border-left: 6px solid green;
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        .bordertext p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .box7 h1 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .container3 {
+            padding: 0 40px;
+        }
+        .container3 h1 {
+            margin-bottom: 10px;
+        }
+        .container3 > p {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+        .card1, .card2, .card3, .card4, .card5, .card6 {
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+        }
+        .card1 img, .card2 img, .card3 img, .card4 img, .card5 img, .card6 img {
+            width: 100%;
+            height: auto;
+            max-height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        .container4 {
+            background-color: #f7f7f7; 
+            padding: 40px 40px 60px 40px;
+        }
+        .about_gallup {
+            display: grid;
+            grid-template-columns: 1.5fr 3fr;
+            gap: 40px;
+        }
+        .left_content p:first-child {
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .left_content h1 {
+            font-size: 2.5em;
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+        }
+        .left_content a {
+            color: green;
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+        .right_cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card_box {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .card_box p:first-child {
+            color: #666;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .card_box h2 {
+            color: green;
+            font-size: 2em;
+            margin: 5px 0 10px 0;
+        }
+        .card_box a {
+            color: green;
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        .connect_with_us {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .connect_with_us h2 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        .connect_with_us > p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .connect_with_us a {
+            color: green;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .social_icons img {
+            width: 24px;
+            height: 24px;
+            margin: 0 8px;
+        }
+        footer {
+            padding: 40px;
+            background-color: #333;
+            color: white;
+        }
+        .footer_top {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+        .gallup_info h1 {
+            font-size: 2em;
+            margin: 0 0 15px 0;
+        }
+        .footer_social img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            filter: invert(1);
+        }
+        .footer_links {
+            display: flex;
+            gap: 50px;
+        }
+        .links_column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .links_column a {
+            font-size: 14px;
+            color: #ccc;
+        }
+        .links_column button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        .subscribe_form p {
+            font-size: 14px;
+            margin: 0 0 10px 0;
+        }
+        .subscribe_form input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+        .subscribe_form .sign_up {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        footer hr {
+            border: 0;
+            border-top: 1px solid #555;
+            margin: 20px 0;
+        }
+        .footer_bottom {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        .footer_bottom p {
+            margin: 0;
+        }
+        .footer_bottom a {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="en_ustungu_text">
+        <p>ABOUT US</p>
+        <p>CAREERS</p>
+        <p>CONTACT US</p>
+        <P>SUBSCRIBE</P>
+    </div>
+
+    <div class="header">
+        <div class="left">
+            <h1>GALLUP</h1>
+            <p>Workplace Advisory</p>
+            <p>CliftonStrenghts</p>
+            <p>Research&Rolling</p>
+            <p>Courses&Events</p>
+            <p>News&insights</p>
+        </div>
+
+        <div class="right">
+            <p>Shop</p>
+            <p>Sign in</p>
+            <img src="" alt="search">
+        </div>
+    </div>
+
+    <div class="container1">
+        <div class="box1">
+            <img src="1 picture.webp" alt="">
+            <div class="green"><p>WORKPLACE</p></div>
+            <h3>Anemic employee Engagement Points to Leadership Challenges</h3>
+            <p>Flattering engagement reflects a shift in how leaders must manage performance</p>
+        </div>
+
+        <div class="box2">
+            <img src="2 picture.webp" alt="">
+            <div class="green"><p>WORLD</p></div>
+            <h3>Tracking the World's Emotional Health</h3>
+            <p>Flattering engagement reflects a shift in how leaders must manage performance</p>
+        </div>
+
+        <div class="box3">
+            <img src="3 picture.webp" alt="">
+            <div class="green">POLITICS</div>
+            <h3>Congress' Job Rating Sinks to 15%; Trump's Steady at 41%</h3>
+            <p>Congress' approval rating has sunk to 15%,mainly because of a sharp decline among Republicans</p>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box4">
+            <img src="1 Nurgasyr.webp" alt="">
+            <div class="green"><p>WORLD</p></div>
+            <h3>Russian Economic outlook dims after Post-innvasion high</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eveniet eius delectus cumque molestias quasi voluptas magnam non atque porro!</p>
+        </div>
+
+        <div class="box5">
+            <img src="2 Nurgasyr.webp" alt="">
+            <div class="green"><p>POLITICS</p></div>
+            <h3>Trust in Media at New Low of 28% in U.S.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eveniet eius delectus cumque molestias quasi voluptas magnam non atque porro!</p>
+        </div>
+
+        <div class="box6">
+            <img src="3 Nurgasyr.webp" alt="">
+            <div class="green"><p>POLITICS</p></div>
+            <h3>Neither Party Dominates in Favorability or Trust</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eveniet eius delectus cumque molestias quasi voluptas magnam non atque porro!</p>
+        </div>
+
+        <div class="box7">
+            <h1>Trending Insights</h1>
+            <div class="bordertext">
+                <p>U.S. Holiday Shoppers plan ti Spend Briskly </p>
+                <hr>
+            </div>
+
+            <div class="bordertext">
+                <p>Obesity Rate Declining in U.S.</p>
+                <hr>
+            </div>
+
+            <div class="bordertext">
+                <p>Russians' Approval of China Firms as Global Order Shifts</p>
+                <hr>
+            </div>
+
+            <div class="bordertext">
+                <p>Americans See Need For Third Party, but Offer Soft Support</p>
+                <hr>
+            </div>
+
+            <div class="bordertext">
+                <p>Americans Favor Spending Cuts Over More Taxes to cut Deficit</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="container3">
+        <h1>Global Indicators</h1>
+        <p>Measuring progress on what matters most to workplaces and socities at large</p>
+
+        <div class="cards">
+
+            <div class="card1">
+                <img src="1 Static.png" alt="">
+                <div class="green"><p>INDICATOR</p></div>
+                <h3>Employee Engagement</h3>
+            </div>
+
+            <div class="card2">
+                <img src="2 statix .png" alt="">
+                <div class="green"><p>INDICATOR</p></div>
+                <h3>Employee Engagement</h3>
+            </div>
+
+            <div class="card3">
+                <img src="3 Static.png" alt="">
+                <div class="green"><p>INDICATOR</p></div>
+                <h3>Employee Engagement</h3>
+            </div>
+
+            <div class="card4">
+                <img src="4 static.png" alt="">
+                <div class="green"><p>INDICATOR</p></div>
+                <h3>Employee Engagement</h3>
+            </div>
+
+            <div class="card5">
+                <img src="5 static.png" alt="">
+                <div class="green"><p>INDICATOR</p></div>
+                <h3>Employee Engagement</h3>
+            </div>
+
+            <div class="card6">
+                <img src="6 static.png" alt="">
+                <div class="green"><p>INDICATOR</p></div>
+                <h3>Employee Engagement</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container4">
+        <div class="about_gallup">
+            <div class="left_content">
+                <p>ABOUT GALLUP</p>
+                <h1>Analytics & Advice <br> That Empower <br> Leaders</h1>
+                <p>We provide data no one else has, to help you make decisions no one else can. And we go beyond research to help your organization maximize human potential.</p>
+                <a href="#">LEARN MORE ABOUT US ></a>
+            </div>
+
+            <div class="right_cards">
+                <div class="our_experience card_box">
+                    <p>OUR EXPERIENCE</p>
+                    <h2>90+ years</h2>
+                    <p>of public opinion survey research expertise.</p>
+                    <a href="#">See our latest insights ></a>
+                </div>
+
+                <div class="our_scale card_box">
+                    <p>OUR SCALE</p>
+                    <h2>98%+</h2>
+                    <p>of the world's population is represented by Gallup's World Poll.</p>
+                    <a href="#">Learn about our global research ></a>
+                </div>
+
+                <div class="our_clients card_box">
+                    <p>OUR CLIENTS</p>
+                    <h2>4,000+</h2>
+                    <p>organizations use our workplace performance platform.</p>
+                    <a href="#">Explore the Gallup Access platform ></a>
+                </div>
+
+                <div class="our_impact card_box">
+                    <p>OUR IMPACT</p>
+                    <h2>36M+</h2>
+                    <p>people have discovered their CliftonStrengths.</p>
+                    <a href="#">Learn about the CliftonStrengths assessment ></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="connect_with_us">
+            <h2>Connect With Us</h2>
+            <p>Learn how we can help you solve your most important challenges.</p>
+            <a href="#">Contact Us ></a>
+            <div class="social_icons">
+                <img src="" alt="LinkedIn icon">
+                <img src="" alt="X icon">
+                <img src="" alt="Facebook icon">
+                <img src="" alt="YouTube icon">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer_top">
+            <div class="gallup_info">
+                <h1>GALLUP</h1>
+                <div class="footer_social">
+                    <img src="" alt="LinkedIn icon">
+                    <img src="" alt="X icon">
+                    <img src="" alt="Facebook icon">
+                    <img src="" alt="YouTube icon">
+                </div>
+            </div>
+            
+            <div class="footer_links">
+                <div class="links_column">
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Locations</a>
+                    <a href="#">News</a>
+                    <a href="#">Store</a>
+                </div>
+                <div class="links_column">
+                    <a href="#">Media Center</a>
+                    <a href="#">Gallup Speakers</a>
+                    <a href="#">Customer Support</a>
+                    <button>CONTACT US</button>
+                </div>
+                <div class="subscribe_form">
+                    <p>Subscribe to Our Latest Insights</p>
+                    <input type="email" placeholder="Your Email Address">
+                    <button class="sign_up">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="footer_bottom">
+            <p>Copyright © 2025 Gallup, Inc. All rights reserved.</p>
+            <a href="#">Cookie Preferences</a>
+            <a href="#">Privacy Statement</a>
+            <a href="#">Legal</a>
+            <a href="#">Do Not Sell or Share My Personal Information</a>
+            <a href="#">California Collection Notice</a>
+        </div>
+    </footer>
+</body>
+</html>
